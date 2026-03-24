@@ -1,0 +1,47 @@
+# Virtual environment
+.venv/
+venv/
+# dotenv files
+.env
+.env.*
+
+# Logs
+logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# OS
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+*.idea/
+.env
+.env.local
+*.log
+logs/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.idea/
+.vscode/
+# Byte-compiled / optimized / DLL files
+*.pyd
+*.so
+
+# C extensions
+*.egg-info/
+/dist/
+.build/
+
+# OS files
+Thumbs.db
+.DS_Store

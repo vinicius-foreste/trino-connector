@@ -1,0 +1,5 @@
+# Ensure consistent line endings
+* text=auto
+
+# Mark large or binary files (if any) to avoid diff noise
+logs/* linguist-generated=false

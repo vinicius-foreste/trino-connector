@@ -1,0 +1,40 @@
+name: Integration Tests (protected)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  integration:
+    name: Run integration tests (requires secrets)
+    runs-on: ubuntu-latest
+    permissions: {}
+    env:
+      TRINO_INTEGRATION: '1'
+      TRINO_HOST: ${{ secrets.TRINO_HOST }}
+      TRINO_BEARER_TOKEN: ${{ secrets.TRINO_BEARER_TOKEN }}
+      TRINO_USER: ${{ secrets.TRINO_USER }}
+      TRINO_PASSWORD: ${{ secrets.TRINO_PASSWORD }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run integration tests
+        env:
+          # do not echo secrets
+          TRINO_INTEGRATION: '1'
+          TRINO_HOST: ${{ secrets.TRINO_HOST }}
+          TRINO_BEARER_TOKEN: ${{ secrets.TRINO_BEARER_TOKEN }}
+          TRINO_USER: ${{ secrets.TRINO_USER }}
+          TRINO_PASSWORD: ${{ secrets.TRINO_PASSWORD }}
+        run: |
+          python -m pytest tests/integration -q
