@@ -10,7 +10,7 @@ authors = [{name = "Vinicius Foreste"}]
 dependencies = [
   "requests==2.31.0",
   "python-dotenv==1.0.0",
-  "pyhive==0.6.0",
+  "pyhive==0.7.0",
   "keyring==23.13.1",
   "pandas==2.1.3",
 ]
