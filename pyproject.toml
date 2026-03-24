@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Utilities to connect and diagnose Trino (DataShare)"
 authors = [{name = "Vinicius Foreste"}]
 dependencies = [
-  "requests==2.31.0",
+  "requests==2.32.5",
   "python-dotenv==1.0.0",
   "pyhive==0.6.0",
   "keyring==23.13.1",
