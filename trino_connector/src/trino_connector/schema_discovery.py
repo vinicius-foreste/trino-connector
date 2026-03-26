@@ -19,7 +19,7 @@ from typing import Optional
 
 import pandas as pd
 
-from trino_connect import TrinoClient
+from trino_connector.trino_connect import TrinoClient
 
 logger = logging.getLogger(__name__)
 

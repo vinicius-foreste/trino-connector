@@ -16,16 +16,16 @@ import sys
 
 def _cmd_status(args: argparse.Namespace) -> None:
     """Subcomando 'status': verifica qual backend LLM está disponível."""
-    from nl_query import detect_backend
+    from trino_connector.nl_query import detect_backend
     model_path = getattr(args, 'model_path', None)
     print(f"Backend LLM:\n{detect_backend(model_path=model_path)}")
 
 
 def _cmd_ask(args: argparse.Namespace) -> None:
     """Subcomando 'ask': pergunta em linguagem natural → SQL → resultado."""
-    from credenciais import load_credentials
-    from trino_connect import TrinoClient
-    from nl_query import ask
+    from trino_connector.credenciais import load_credentials
+    from trino_connector.trino_connect import TrinoClient
+    from trino_connector.nl_query import ask
 
     host = args.host or os.environ.get("TRINO_HOST", "trino-gateway.dataeng.bigdata.olxbr.io")
     user, pwd = load_credentials()
@@ -64,9 +64,9 @@ def _cmd_ask(args: argparse.Namespace) -> None:
 
 def _cmd_interactive(args: argparse.Namespace) -> None:
     """Subcomando 'chat': modo interativo contínuo."""
-    from credenciais import load_credentials
-    from trino_connect import TrinoClient
-    from nl_query import ask
+    from trino_connector.credenciais import load_credentials
+    from trino_connector.trino_connect import TrinoClient
+    from trino_connector.nl_query import ask
 
     host = args.host or os.environ.get("TRINO_HOST", "trino-gateway.dataeng.bigdata.olxbr.io")
     user, pwd = load_credentials()

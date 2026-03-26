@@ -9,7 +9,7 @@ from __future__ import annotations
 import sys
 from typing import Optional
 
-import config
+from trino_connector import config
 
 try:
     import chromadb

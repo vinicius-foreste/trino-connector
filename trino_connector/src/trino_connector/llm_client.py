@@ -16,7 +16,7 @@ from typing import Optional
 import requests
 import urllib3
 
-import config
+from trino_connector import config
 
 logger = logging.getLogger(__name__)
 

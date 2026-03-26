@@ -17,9 +17,9 @@ import sys
 import time
 from typing import Optional
 
-import config
-from trino_connect import TrinoClient
-from credenciais import load_credentials
+from trino_connector import config
+from trino_connector.trino_connect import TrinoClient
+from trino_connector.credenciais import load_credentials
 
 try:
     import chromadb
@@ -185,7 +185,7 @@ def main():
     catalogs = args.catalogs
     if args.all_catalogs:
         print("   Descobrindo catálogos...")
-        from schema_discovery import discover_catalogs
+        from trino_connector.schema_discovery import discover_catalogs
         catalogs = discover_catalogs(client)
         print(f"   Catálogos: {', '.join(catalogs)}")
     elif catalogs is None:

@@ -14,8 +14,8 @@ from typing import Optional
 import pandas as pd
 import requests
 
-from credenciais import load_credentials
-from trino_connect import TrinoClient
+from trino_connector.credenciais import load_credentials
+from trino_connector.trino_connect import TrinoClient
 
 
 def preview_with_trinoclient(host: str, table: str, limit: int = 10) -> pd.DataFrame:

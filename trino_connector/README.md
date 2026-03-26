@@ -10,23 +10,24 @@ Pergunta → ChromaDB (RAG) → Toqan (LLM) → Trino → DataFrame
 
 | Módulo | Responsabilidade |
 |---|---|
-| `config.py` | Carrega variáveis de ambiente (`.env`) e expõe constantes centralizadas |
-| `indexer.py` | Extrai metadados do Trino via `information_schema` e indexa no ChromaDB |
-| `retriever.py` | Busca semântica no ChromaDB; retorna top-K schemas em YAML |
-| `llm_client.py` | Chama o Toqan com o contexto YAML e retorna `{sql_query, lineage}` |
-| `trino_executor.py` | Executa o SQL no Trino e retorna `pandas.DataFrame` |
-| `query_logger.py` | Grava log de auditoria em JSON (pergunta, SQL, lineage, status) |
-| `main.py` | Orquestrador — modo interativo e pergunta direta via CLI |
-| `trino_connect.py` | `TrinoClient` com retry/backoff (base) |
-| `credenciais.py` | Carrega credenciais: `env` → `keyring` → prompt |
-| `diagnostics.py` | Probes de rede/HTTP/TLS para troubleshooting |
+| `src/trino_connector/config.py` | Carrega variáveis de ambiente (`.env`) e expõe constantes centralizadas |
+| `src/trino_connector/indexer.py` | Extrai metadados do Trino via `information_schema` e indexa no ChromaDB |
+| `src/trino_connector/retriever.py` | Busca semântica no ChromaDB; retorna top-K schemas em YAML |
+| `src/trino_connector/llm_client.py` | Chama o Toqan com o contexto YAML e retorna `{sql_query, lineage}` |
+| `src/trino_connector/trino_executor.py` | Executa o SQL no Trino e retorna `pandas.DataFrame` |
+| `src/trino_connector/query_logger.py` | Grava log de auditoria em JSON (pergunta, SQL, lineage, status) |
+| `src/trino_connector/main.py` | Orquestrador — modo interativo e pergunta direta via CLI |
+| `src/trino_connector/trino_connect.py` | `TrinoClient` com retry/backoff (base) |
+| `src/trino_connector/credenciais.py` | Carrega credenciais: `env` → `keyring` → prompt |
+| `src/trino_connector/diagnostics.py` | Probes de rede/HTTP/TLS para troubleshooting |
 
 ## Instalação
 
 ```powershell
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+cd trino_connector
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -e .
 ```
 
 ## Configuração
@@ -61,16 +62,16 @@ Requer VPN ativa.
 
 ```powershell
 # Catálogo padrão (TRINO_CATALOG do .env)
-python indexer.py
+python -m trino_connector.indexer
 
 # Catálogo específico
-python indexer.py --catalogs hive
+python -m trino_connector.indexer --catalogs hive
 
 # Múltiplos catálogos
-python indexer.py --catalogs hive iceberg
+python -m trino_connector.indexer --catalogs hive iceberg
 
 # Descobrir e indexar todos os catálogos
-python indexer.py --all-catalogs
+python -m trino_connector.indexer --all-catalogs
 ```
 
 O indexador extrai metadados via `information_schema.columns` (bulk, sem SHOW TABLES loop) e grava o banco vetorial em `.chroma_db/`.
@@ -78,7 +79,7 @@ O indexador extrai metadados via `information_schema.columns` (bulk, sem SHOW TA
 ### 2. Verificar status
 
 ```powershell
-python main.py --status
+python -m trino_connector.main --status
 ```
 
 Saída esperada após indexação:
@@ -92,13 +93,13 @@ Saída esperada após indexação:
 
 ```powershell
 # Pergunta direta
-python main.py "quantos anúncios foram criados em 2024?"
+python -m trino_connector.main "quantos anúncios foram criados em 2024?"
 
 # Executar sem confirmação
-python main.py -y "qual o total de receita por categoria em março?"
+python -m trino_connector.main -y "qual o total de receita por categoria em março?"
 
 # Modo interativo (várias perguntas)
-python main.py
+python -m trino_connector.main
 ```
 
 O sistema vai mostrar:
@@ -116,7 +117,7 @@ O sistema vai mostrar:
 - Toda execução é gravada em `query_audit_log.json` com timestamp, SQL e status.
 - Use `keyring` para armazenar senhas localmente:
   ```powershell
-  python keyring_store.py
+python -m trino_connector.keyring_store
   ```
 
 ## Utilities originais
@@ -124,15 +125,15 @@ O sistema vai mostrar:
 ### Diagnóstico de conexão
 
 ```powershell
-python teste_trino.py
+python -m trino_connector.diagnostics --host trino-gateway.dataeng.bigdata.olxbr.io
 ```
 
-Faz probes TCP/HTTP no gateway, testa autenticação e executa uma query de exemplo (`TRINO_RUN_EXAMPLE=1`).
+Faz probes TCP/HTTP no gateway e retorna informações de autenticação.
 
 ### Relatório de credenciais
 
 ```powershell
-python cred_report.py
+python -m trino_connector.cred_report
 ```
 
 Inspeciona onde as credenciais estão configuradas (env, keyring) e emite recomendações.
@@ -140,8 +141,8 @@ Inspeciona onde as credenciais estão configuradas (env, keyring) e emite recome
 ### TrinoClient (uso programático)
 
 ```python
-from credenciais import load_credentials
-from trino_connect import TrinoClient
+from trino_connector.credenciais import load_credentials
+from trino_connector.trino_connect import TrinoClient
 
 user, pwd = load_credentials()
 client = TrinoClient(host="trino-gateway.dataeng.bigdata.olxbr.io", port="443")

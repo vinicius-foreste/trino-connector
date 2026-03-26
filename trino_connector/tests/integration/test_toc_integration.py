@@ -29,8 +29,8 @@ import pandas as pd
 import requests
 import time
 
-from trino_connect import TrinoClient
-from credenciais import load_credentials
+from trino_connector.trino_connect import TrinoClient
+from trino_connector.credenciais import load_credentials
 
 
 def _run_query_via_trino_http(host: str, sql: str, bearer: str, user: str = "integration") -> pd.DataFrame:

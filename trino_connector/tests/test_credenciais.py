@@ -4,7 +4,7 @@ import types
 
 import pytest
 
-import credenciais
+import trino_connector.credenciais as credenciais
 
 
 def test_load_credentials_from_env(monkeypatch):

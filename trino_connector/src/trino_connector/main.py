@@ -19,11 +19,11 @@ import argparse
 import sys
 import traceback
 
-import config
-import retriever
-import llm_client
-import trino_executor
-import query_logger
+from trino_connector import config
+from trino_connector import retriever
+from trino_connector import llm_client
+from trino_connector import trino_executor
+from trino_connector import query_logger
 
 
 def ask(question: str, *, confirm: bool = True) -> None:

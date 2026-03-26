@@ -12,7 +12,7 @@ import os
 from datetime import datetime, timezone
 from typing import Optional
 
-import config
+from trino_connector import config
 
 logger = logging.getLogger(__name__)
 

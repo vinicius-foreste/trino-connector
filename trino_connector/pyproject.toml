@@ -17,6 +17,9 @@ dependencies = [
 ]
 license = "MIT"
 
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [tool.pytest.ini_options]
 minversion = "6.0"
 testpaths = ["tests"]
@@ -25,6 +28,7 @@ markers = ["integration: mark tests that require access to a live Trino instance
 [tool.ruff]
 line-length = 88
 select = ["E", "F", "W", "I"]
+src = ["src"]
 
 [project.scripts]
-trino-connector = "cli:main"
+trino-connector = "trino_connector.cli:main"

@@ -1,6 +1,6 @@
 import pandas as pd
 
-from trino_connect import TrinoClient
+from trino_connector.trino_connect import TrinoClient
 
 
 def test_execute_returns_dataframe(monkeypatch):
@@ -23,7 +23,7 @@ def test_execute_returns_dataframe(monkeypatch):
         return FakeConn()
 
     # patch the underlying pyhive connect used by trino_connect.TrinoClient
-    monkeypatch.setattr('trino_connect.trino.connect', fake_connect)
+    monkeypatch.setattr('trino_connector.trino_connect.trino.connect', fake_connect)
 
     client = TrinoClient(host='example', port='443')
     client.connect(username='u', password='p')

@@ -42,7 +42,7 @@ def main():
     print("\n⏳ Enviando pergunta de teste: 'Diga apenas: OK'...")
 
     try:
-        import toqan_backend
+        import trino_connector.toqan_backend as toqan_backend
         response = toqan_backend.call(
             [{"role": "user", "content": "Responda apenas com a palavra: OK"}],
         )

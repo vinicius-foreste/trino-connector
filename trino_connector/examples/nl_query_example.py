@@ -10,9 +10,9 @@ Uso:
     python examples/nl_query_example.py
 """
 
-from credenciais import load_credentials
-from trino_connect import TrinoClient
-from nl_query import ask, detect_backend
+from trino_connector.credenciais import load_credentials
+from trino_connector.trino_connect import TrinoClient
+from trino_connector.nl_query import ask, detect_backend
 
 
 def main():

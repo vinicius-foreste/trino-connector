@@ -1,4 +1,4 @@
-from trino_connect import TrinoClient
+from trino_connector.trino_connect import TrinoClient
 
 cliente = TrinoClient(host="trino-gateway.dataeng.bigdata.olxbr.io")
 

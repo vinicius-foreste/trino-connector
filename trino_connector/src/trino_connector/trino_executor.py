@@ -9,9 +9,9 @@ import logging
 
 import pandas as pd
 
-import config
-from trino_connect import TrinoClient
-from credenciais import load_credentials
+from trino_connector import config
+from trino_connector.trino_connect import TrinoClient
+from trino_connector.credenciais import load_credentials
 
 logger = logging.getLogger(__name__)
 

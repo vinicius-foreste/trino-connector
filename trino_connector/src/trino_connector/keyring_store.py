@@ -15,7 +15,7 @@ from __future__ import annotations
 import os
 from getpass import getpass
 
-from credenciais import store_password_keyring
+from trino_connector.credenciais import store_password_keyring
 
 
 def main():

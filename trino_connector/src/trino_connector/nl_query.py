@@ -18,8 +18,8 @@ from typing import Optional
 
 import pandas as pd
 
-from trino_connect import TrinoClient
-from schema_discovery import build_schema_context, discover_all_tables
+from trino_connector.trino_connect import TrinoClient
+from trino_connector.schema_discovery import build_schema_context, discover_all_tables
 
 logger = logging.getLogger(__name__)
 
@@ -121,7 +121,7 @@ def _detect_active_backend(model_path: Optional[str] = None) -> str:
 
     # 1. Toqan (gateway corporativo — prioridade máxima)
     try:
-        import toqan_backend
+        import trino_connector.toqan_backend as toqan_backend
         if toqan_backend.is_available():
             _active_backend = "toqan"
             return "toqan"
@@ -136,7 +136,7 @@ def _detect_active_backend(model_path: Optional[str] = None) -> str:
 
     # 3. Local llama-cpp-python
     try:
-        import local_llm
+        import trino_connector.local_llm as local_llm
         if local_llm.is_available():
             path = model_path or os.environ.get("LOCAL_MODEL_PATH")
             if path and os.path.isfile(path):
@@ -160,7 +160,7 @@ def detect_backend(model_path: Optional[str] = None) -> str:
 
     # Toqan
     try:
-        import toqan_backend
+        import trino_connector.toqan_backend as toqan_backend
         lines.append(f"  toqan:  {toqan_backend.status()}")
     except ImportError:
         lines.append("  toqan:  módulo não encontrado")
@@ -175,7 +175,7 @@ def detect_backend(model_path: Optional[str] = None) -> str:
 
     # Local llama-cpp-python
     try:
-        import local_llm
+        import trino_connector.local_llm as local_llm
         lines.append(f"  local:  {local_llm.status(model_path)}")
     except ImportError:
         lines.append("  local:  llama-cpp-python NÃO instalado")
@@ -202,13 +202,13 @@ def select_relevant_tables(
     backend = _detect_active_backend(model_path)
 
     if backend == "toqan":
-        import toqan_backend
+        import trino_connector.toqan_backend as toqan_backend
         return toqan_backend.select_relevant_tables(
             question, all_tables, TABLE_SELECTION_PROMPT, model=model,
         )
 
     if backend == "local":
-        import local_llm
+        import trino_connector.local_llm as local_llm
         return local_llm.select_relevant_tables(
             question, all_tables, TABLE_SELECTION_PROMPT, model_path=model_path,
         )
@@ -250,13 +250,13 @@ def generate_sql(
     backend = _detect_active_backend(model_path)
 
     if backend == "toqan":
-        import toqan_backend
+        import trino_connector.toqan_backend as toqan_backend
         return toqan_backend.generate_sql(
             question, schema_context, SYSTEM_PROMPT, model=model,
         )
 
     if backend == "local":
-        import local_llm
+        import trino_connector.local_llm as local_llm
         return local_llm.generate_sql(
             question, schema_context, SYSTEM_PROMPT, model_path=model_path,
         )
