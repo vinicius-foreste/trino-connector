@@ -1,0 +1,22 @@
+id_conta_olx,competencia,valor_mensal,periodicidade,channel,status_recorrente,package_name,tamanho,estado_conta,cidade_conta,dt
+6bd81abe-1c5e-a851-ec62-2798a32ae108,2026-01-01,40500000.00,1,Inside,Flat,Plano Multiportais 300 Exclusivo,G,SP,Sao Paulo,2026-01-01
+5a796956-f46a-ff70-db06-c3b35dc85e0c,2026-01-01,32500000.00,1,Field,Novo,Plano Multiportais 150 Premium,G,RJ,Rio de Janeiro,2026-01-01
+6bd81abe-1c5e-a851-ec62-2798a32ae108,2026-02-01,39000000.00,1,Inside,Upgrade,Plano Multiportais 300 Exclusivo,G,SP,Sao Paulo,2026-02-01
+223831e7-b331-d1c7-ab56-c9d0ab351ce9,2026-02-01,28000000.00,1,Field,Flat,Plano Multiportais 100,M,MG,Belo Horizonte,2026-02-01
+5a796956-f46a-ff70-db06-c3b35dc85e0c,2026-03-01,37000000.00,1,Field,Flat,Plano Multiportais 150 Premium,G,RJ,Rio de Janeiro,2026-03-01
+fa9fa09a-5890-00e4-ee21-193ffce549cc,2026-03-01,27000000.00,1,Inside,Novo,Plano Multiportais 80 Plus,M,PR,Curitiba,2026-03-01
+223831e7-b331-d1c7-ab56-c9d0ab351ce9,2026-04-01,34500000.00,1,Field,Upgrade,Plano Multiportais 100,M,MG,Belo Horizonte,2026-04-01
+292ffbdb-a932-ce4b-8568-69532d497975,2026-04-01,23800000.00,1,Online,Downgrade,Plano Multiportais 60,P,BA,Salvador,2026-04-01
+fa9fa09a-5890-00e4-ee21-193ffce549cc,2026-05-01,36000000.00,1,Inside,Flat,Plano Multiportais 80 Plus,M,PR,Curitiba,2026-05-01
+e894d55c-1ea1-efa3-5fa3-aac2babb6c2e,2026-05-01,25000000.00,3,Field,Upgrade,Plano Multiportais 600,G,SC,Florianopolis,2026-05-01
+292ffbdb-a932-ce4b-8568-69532d497975,2026-06-01,34000000.00,1,Online,Flat,Plano Multiportais 60,P,BA,Salvador,2026-06-01
+19cb83dc-e06b-c7a4-be8d-80f6a44a70ba,2026-06-01,22800000.00,1,ND,Novo,Plano Multiportais 25,P,PE,Recife,2026-06-01
+e894d55c-1ea1-efa3-5fa3-aac2babb6c2e,2026-07-01,32800000.00,3,Field,Flat,Plano Multiportais 600,G,SC,Florianopolis,2026-07-01
+8f0a18e3-67fa-2dbc-b1d5-48be60027e54,2026-07-01,21800000.00,1,Inside,Upgrade,Plano Multiportais 200,M,RS,Porto Alegre,2026-07-01
+19cb83dc-e06b-c7a4-be8d-80f6a44a70ba,2026-08-01,31200000.00,1,ND,Flat,Plano Multiportais 25,P,PE,Recife,2026-08-01
+8f0a18e3-67fa-2dbc-b1d5-48be60027e54,2026-09-01,26800000.00,1,Inside,Downgrade,Plano Multiportais 200,M,RS,Porto Alegre,2026-09-01
+a9cc6ebf-2edf-ed22-21b0-439b4d9c50da,2026-09-01,17600000.00,1,Field,Flat,Plano Multiportais 80 Pro,P,CE,Fortaleza,2026-09-01
+6abf1258-21ed-8c81-42be-ef4a17f05cca,2026-10-01,25500000.00,1,Online,Flat,Plano Multiportais 40 Plus,P,GO,Goiania,2026-10-01
+a95801ca-edb2-4380-609e-324c5c983604,2026-10-01,16800000.00,1,Field,Novo,Plano Multiportais 100 Pro,P,BA,Feira de Santana,2026-10-01
+87c33ce7-4258-5c6b-f599-1ef1bc74ca05,2026-11-01,16000000.00,1,Inside,Flat,Plano Multiportais 300,M,SP,Campinas,2026-11-01
+a95801ca-edb2-4380-609e-324c5c983604,2026-12-01,23000000.00,1,Field,Churn,Plano Multiportais 100 Pro,P,BA,Feira de Santana,2026-12-01

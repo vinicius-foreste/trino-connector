@@ -1,0 +1,25 @@
+advertiser_id,mes_base,pacote,canal_conta,dono_conta,estado,municipio,classificacao,classificacao_churn,faturado_mes,faturado_sva,total_pago_sva
+6bd81abe-1c5e-a851-ec62-2798a32ae108,2026-01-01,Plano Multiportais 300 Exclusivo,Inside,Bianca D,SP,Sao Paulo,Flat,Nao,42100000.00,1900000.00,1800000.00
+5a796956-f46a-ff70-db06-c3b35dc85e0c,2026-01-01,Plano Multiportais 150 Premium,Field,William V,RJ,Rio de Janeiro,Novo,Nao,33600000.00,1400000.00,1300000.00
+6bd81abe-1c5e-a851-ec62-2798a32ae108,2026-02-01,Plano Multiportais 300 Exclusivo,Inside,Bianca D,SP,Sao Paulo,Upgrade,Nao,40500000.00,1700000.00,1600000.00
+223831e7-b331-d1c7-ab56-c9d0ab351ce9,2026-02-01,Plano Multiportais 100,Field,Ronaldo S,MG,Belo Horizonte,Flat,Nao,29200000.00,1200000.00,1100000.00
+5a796956-f46a-ff70-db06-c3b35dc85e0c,2026-03-01,Plano Multiportais 150 Premium,Field,William V,RJ,Rio de Janeiro,Flat,Nao,38700000.00,1600000.00,1500000.00
+fa9fa09a-5890-00e4-ee21-193ffce549cc,2026-03-01,Plano Multiportais 80 Plus,Inside,Dayane M,PR,Curitiba,Novo,Nao,27800000.00,1000000.00,950000.00
+223831e7-b331-d1c7-ab56-c9d0ab351ce9,2026-04-01,Plano Multiportais 100,Field,Ronaldo S,MG,Belo Horizonte,Upgrade,Nao,35400000.00,1500000.00,1400000.00
+292ffbdb-a932-ce4b-8568-69532d497975,2026-04-01,Plano Multiportais 60,Online,Faberson L,BA,Salvador,Downgrade,Nao,24300000.00,900000.00,400000.00
+fa9fa09a-5890-00e4-ee21-193ffce549cc,2026-05-01,Plano Multiportais 80 Plus,Inside,Dayane M,PR,Curitiba,Flat,Nao,36800000.00,1550000.00,1450000.00
+e894d55c-1ea1-efa3-5fa3-aac2babb6c2e,2026-05-01,Plano Multiportais 600,Field,Bruno S,SC,Florianopolis,Upgrade,Nao,25500000.00,950000.00,900000.00
+292ffbdb-a932-ce4b-8568-69532d497975,2026-06-01,Plano Multiportais 60,Online,Faberson L,BA,Salvador,Flat,Nao,34900000.00,1500000.00,1400000.00
+19cb83dc-e06b-c7a4-be8d-80f6a44a70ba,2026-06-01,Plano Multiportais 25,ND,Michelle D,PE,Recife,Novo,Nao,23400000.00,850000.00,800000.00
+e894d55c-1ea1-efa3-5fa3-aac2babb6c2e,2026-07-01,Plano Multiportais 600,Field,Bruno S,SC,Florianopolis,Flat,Nao,33400000.00,1450000.00,1350000.00
+8f0a18e3-67fa-2dbc-b1d5-48be60027e54,2026-07-01,Plano Multiportais 200,Inside,Antonio G,RS,Porto Alegre,Upgrade,Nao,22100000.00,780000.00,720000.00
+19cb83dc-e06b-c7a4-be8d-80f6a44a70ba,2026-08-01,Plano Multiportais 25,ND,Michelle D,PE,Recife,Flat,Nao,31900000.00,1300000.00,1200000.00
+6abf1258-21ed-8c81-42be-ef4a17f05cca,2026-08-01,Plano Multiportais 40 Plus,Online,Tamires P,GO,Goiania,Novo,Nao,19900000.00,650000.00,600000.00
+8f0a18e3-67fa-2dbc-b1d5-48be60027e54,2026-09-01,Plano Multiportais 200,Inside,Antonio G,RS,Porto Alegre,Downgrade,Nao,27300000.00,1100000.00,1000000.00
+a9cc6ebf-2edf-ed22-21b0-439b4d9c50da,2026-09-01,Plano Multiportais 80 Pro,Field,Aline S,CE,Fortaleza,Flat,Nao,18400000.00,580000.00,520000.00
+6abf1258-21ed-8c81-42be-ef4a17f05cca,2026-10-01,Plano Multiportais 40 Plus,Online,Tamires P,GO,Goiania,Flat,Nao,26000000.00,1050000.00,980000.00
+a95801ca-edb2-4380-609e-324c5c983604,2026-10-01,Plano Multiportais 100 Pro,Field,Allyne M,BA,Feira de Santana,Novo,Nao,17200000.00,530000.00,490000.00
+a9cc6ebf-2edf-ed22-21b0-439b4d9c50da,2026-11-01,Plano Multiportais 80 Pro,Field,Aline S,CE,Fortaleza,Upgrade,Nao,24800000.00,990000.00,920000.00
+87c33ce7-4258-5c6b-f599-1ef1bc74ca05,2026-11-01,Plano Multiportais 300,Inside,Rafael C,SP,Campinas,Flat,Nao,16800000.00,510000.00,480000.00
+a95801ca-edb2-4380-609e-324c5c983604,2026-12-01,Plano Multiportais 100 Pro,Field,Allyne M,BA,Feira de Santana,Churn,Sim,23500000.00,930000.00,860000.00
+87c33ce7-4258-5c6b-f599-1ef1bc74ca05,2026-12-01,Plano Multiportais 300,Inside,Rafael C,SP,Campinas,Flat,Nao,15900000.00,470000.00,440000.00
